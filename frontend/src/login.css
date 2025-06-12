@@ -1,0 +1,280 @@
+/* src/login.css */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  background-color: #f0f2f5; /* Light grey background */
+  color: #333;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #eef2f5; /* Slightly softer background */
+}
+
+.admin-header {
+  background-color: #2c3e50; /* Dark blue/grey */
+  color: white;
+  padding: 18px 30px; /* Increased padding */
+  font-size: 1.3em; /* Slightly larger */
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+  text-align: left; /* Align header text to left */
+}
+
+.login-container {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px; /* More generous padding */
+}
+
+.login-image-section {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  max-width: 600px;
+  min-width: 300px; /* Ensure a minimum width */
+  background-color: #fff; /* White background for image section */
+  border-radius: 12px 0 0 12px; /* Rounded corners on left */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Deeper shadow for card effect */
+  overflow: hidden; /* Hide overflow for image border-radius */
+}
+
+.login-image-section img {
+  max-width: 100%;
+  height: auto;
+  display: block; /* Remove extra space below image */
+  border-radius: 8px; /* Slightly rounded image corners */
+}
+
+.login-form-section {
+  flex: 1;
+  max-width: 450px; /* Slightly adjusted max-width */
+  min-width: 300px; /* Ensure a minimum width */
+  padding: 40px; /* More padding inside the form */
+  background-color: #ffffff; /* White background for the form */
+  border-radius: 0 12px 12px 0; /* Rounded corners on right */
+  box-shadow: 0 8px 25px rgba(0,0,0,0.1); /* Deeper shadow for card effect */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically in form */
+}
+
+.form-brand {
+  margin-bottom: 30px; /* Increased space below brand */
+  text-align: center;
+}
+
+.brand-logo {
+  font-size: 2.8em; /* Larger logo text */
+  font-weight: bold;
+  color: #34495e; /* Darker tone */
+  margin-bottom: 5px;
+}
+
+.brand-text {
+  font-size: 1.4em; /* Larger tagline */
+  color: #555;
+  letter-spacing: 1px; /* Slight letter spacing */
+  display: block; /* Ensure it's on its own line */
+}
+
+.brand-underline {
+  width: 60px; /* Underline for the brand */
+  height: 4px;
+  background-color: #007bff; /* Blue underline */
+  margin: 10px auto 0; /* Center the underline */
+  border-radius: 2px;
+}
+
+.login-title {
+  font-size: 1.8em; /* Larger login title */
+  color: #2c3e50; /* Darker tone */
+  margin-bottom: 10px; /* Space below title */
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Center the LOGIN text with dropdown */
+  gap: 10px; /* Space between LOGIN and dropdown */
+}
+
+.login-as-dropdown {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px; /* More rounded dropdown */
+  font-size: 0.9em;
+  color: #555;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  outline: none; /* Remove focus outline */
+  transition: border-color 0.3s;
+}
+
+.login-as-dropdown:hover {
+  border-color: #007bff;
+}
+
+.welcome-message {
+  text-align: center;
+  color: #777;
+  margin-bottom: 25px; /* More space */
+  font-size: 1em;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Space between form groups and buttons */
+}
+
+.form-group {
+  margin-bottom: 0; /* Removed default margin as gap handles it */
+}
+
+.form-group input {
+  width: 100%;
+  padding: 15px 18px; /* Larger padding for inputs */
+  border: 1px solid #ddd;
+  border-radius: 8px; /* More rounded inputs */
+  font-size: 1em;
+  color: #333;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  box-sizing: border-box; /* Include padding in width */
+}
+
+.form-group input:focus {
+  border-color: #007bff; /* Blue border on focus */
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25); /* Subtle glow on focus */
+  outline: none; /* Remove default outline */
+}
+
+.form-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9em;
+}
+
+.show-password-label {
+  color: #555;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.show-password-label input[type="checkbox"] {
+  margin-right: 8px; /* Space between checkbox and text */
+  accent-color: #007bff; /* Blue checkbox */
+  width: 16px; /* Custom size for checkbox */
+  height: 16px;
+}
+
+.forgot-password-link {
+  color: #007bff; /* Changed to blue for consistency */
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+.login-button {
+  width: 100%;
+  padding: 16px; /* Slightly larger button padding */
+  background-color: #007bff; /* Primary blue color */
+  color: white;
+  border: none;
+  border-radius: 8px; /* More rounded button */
+  font-size: 1.1em; /* Slightly smaller font for balance */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 10px rgba(0, 123, 255, 0.2); /* Subtle shadow for button */
+}
+
+.login-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 6px 15px rgba(0, 123, 255, 0.3);
+}
+
+/* Styling for the new "New User?" button */
+.new-user-button {
+  background-color: #6c757d; /* A different color for the new button */
+  box-shadow: 0 4px 10px rgba(108, 117, 125, 0.2);
+}
+
+.new-user-button:hover {
+  background-color: #5a6268; /* Darker grey on hover */
+  box-shadow: 0 6px 15px rgba(108, 117, 125, 0.3);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .login-container {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .login-image-section {
+    order: 2; /* Move image below form on smaller screens */
+    margin-top: 30px;
+    margin-left: 0;
+    border-radius: 12px; /* Full rounded corners */
+  }
+
+  .login-form-section {
+    margin-left: 0;
+    max-width: 90%; /* Allow form to take more width */
+    padding: 30px; /* Adjusted padding for smaller screens */
+    border-radius: 12px; /* Full rounded corners */
+  }
+
+  .login-title {
+    flex-direction: column; /* Stack login title and dropdown */
+    gap: 5px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    padding: 15px;
+  }
+
+  .login-form-section {
+    padding: 25px;
+  }
+
+  .admin-header {
+    padding: 15px 20px;
+    font-size: 1.2em;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form-section {
+    padding: 20px;
+    max-width: 100%; /* Full width on very small screens */
+  }
+
+  .login-title {
+    font-size: 1.6em;
+  }
+
+  .form-group input {
+    padding: 12px 15px;
+  }
+
+  .login-button {
+    padding: 14px;
+    font-size: 1em;
+  }
+}

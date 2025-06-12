@@ -1,0 +1,532 @@
+/* src/dashboard.css */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  background-color: #f0f2f5; /* Light grey background */
+  color: #333;
+}
+
+.dashboard-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-coalor: #f8f9fa; /* Lighter background for the main page area */
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 30px; /* More generous padding */
+  background-color: #2c3e50; /* Dark blue/grey */
+  color: white;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Subtle shadow */
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.admin-breadcrumb {
+  font-size: 0.9em;
+  color: #bbb;
+  margin-bottom: 5px;
+}
+
+.logo-text {
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between elements in the header right */
+}
+
+.view-plan-button,
+.direct-logout-button { /* Apply similar styling to both buttons */
+  background-color: #007bff; /* Blue */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.view-plan-button:hover,
+.direct-logout-button:hover {
+  background-color: #0056b3; /* Darker blue on hover */
+  transform: translateY(-1px);
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative; /* Keep relative positioning for potential future dropdowns or styling */
+  padding: 5px 0; /* Adjust padding as it's not a click trigger anymore */
+}
+
+.profile-icon {
+  background-color: #fbc02d; /* Yellow */
+  color: #333;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 0.9em;
+  flex-shrink: 0; /* Prevent shrinking */
+}
+
+.profile-section span:nth-of-type(1) { /* John Doe text */
+  font-weight: 500;
+  font-size: 0.95em;
+  color: white; /* Ensure text is white */
+}
+
+.profile-dropdown-arrow {
+  font-size: 0.7em;
+  color: #bbb;
+  margin-left: 5px; /* Space between name and arrow */
+  /* If you don't need the arrow since it's not a dropdown, you can set display: none; here */
+}
+
+/* Removed: .profile-dropdown-menu styles as it's no longer used */
+/* Removed: .dropdown-logout-button styles as it's replaced by .direct-logout-button */
+
+
+/* Dashboard Content */
+.dashboard-content {
+  flex-grow: 1;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+/* Templates Section */
+.templates-section h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.5em;
+  color: #2c3e50; /* Darker heading */
+  font-weight: 600;
+}
+
+.templates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 25px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e0e0e0; /* Separator */
+}
+
+.template-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  min-height: 180px; /* Ensure consistent card height */
+  justify-content: center;
+}
+
+.template-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.template-image {
+  width: 80px;
+  height: 80px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin-bottom: 15px;
+  border: 1px solid #eee; /* Subtle border for images */
+}
+
+.template-icon {
+  font-size: 3em; /* Larger icon */
+  margin-bottom: 15px;
+  color: #007bff; /* Blue for icons */
+}
+
+.template-name {
+  font-size: 1.1em;
+  font-weight: 600;
+  color: #444;
+}
+
+/* My Workspace Section */
+.workspace-section h3 {
+  margin-top: 0;
+  margin-bottom: 25px;
+  font-size: 1.5em;
+  color: #2c3e50;
+  font-weight: 600;
+}
+
+.workspace-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  gap: 15px; /* Space between items when wrapped */
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 25px;
+  padding: 8px 15px;
+  box-shadow: inset 0 1px 3px rgba(0,0,0,0.05);
+  flex-grow: 1; /* Allow search bar to grow */
+  max-width: 350px; /* Max width for search */
+}
+
+.search-bar .search-icon {
+  color: #888;
+  margin-right: 10px;
+  font-size: 1.1em;
+}
+
+.search-bar input {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  font-size: 0.95em;
+  padding: 2px 0;
+}
+
+.workspace-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.create-form-button {
+  background-color: #28a745; /* Green */
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.create-form-button:hover {
+  background-color: #218838; /* Darker green on hover */
+}
+
+.view-toggle {
+  display: flex;
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.view-toggle .view-button {
+  background: none;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 0.9em;
+  color: #555;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.view-toggle .view-button.active {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Workspace Table View */
+.workspace-table {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  overflow: hidden; /* Ensures border-radius applies to content */
+}
+
+.table-header,
+.table-row {
+  display: grid;
+  grid-template-columns: 0.5fr 3fr 1.5fr 1.5fr 1.5fr 0.8fr; /* Adjusted column widths */
+  align-items: center;
+  padding: 15px 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.table-header {
+  background-color: #e9ecef; /* Light grey header */
+  font-weight: 600;
+  color: #555;
+  font-size: 0.9em;
+  border-bottom: 2px solid #ddd;
+}
+
+.table-row {
+  background-color: white;
+  transition: background-color 0.2s ease;
+}
+
+.table-row:hover {
+  background-color: #f8f9fa; /* Slight hover effect */
+}
+
+.table-row:last-child {
+  border-bottom: none;
+}
+
+.checkbox-col input[type="checkbox"] {
+  transform: scale(1.1); /* Slightly larger checkbox */
+  cursor: pointer;
+}
+
+.name-col {
+  font-weight: 500;
+  color: #333;
+}
+
+.response-col,
+.completion-col,
+.updated-col {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.more-options-button {
+  background: none;
+  border: none;
+  font-size: 1.5em; /* Larger dots */
+  color: #888;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.more-options-button:hover {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+/* Workspace Grid View */
+.workspace-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Larger cards */
+  gap: 25px; /* More space between cards */
+}
+
+.form-card {
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+  padding: 25px; /* More padding */
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  justify-content: space-between; /* Space out content */
+  min-height: 200px; /* Ensure consistent height */
+}
+
+.form-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.form-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.form-card-name {
+  margin: 0;
+  font-size: 1.3em;
+  color: #333;
+}
+
+.form-card-body {
+  flex-grow: 1; /* Allow body to take available space */
+  margin-bottom: 20px;
+}
+
+.form-card-detail {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  color: #555;
+}
+
+.form-card-detail strong {
+  color: #333;
+}
+
+.form-card-actions {
+  display: flex;
+  gap: 10px;
+  border-top: 1px solid #eee; /* Separator for buttons */
+  padding-top: 15px;
+  margin-top: 10px;
+}
+
+.form-card-button {
+  flex-grow: 1;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.9em;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.form-card-button.edit-button {
+  background-color: #6c757d; /* Grey for Edit */
+  color: white;
+  border: none;
+}
+
+.form-card-button.edit-button:hover {
+  background-color: #5a6268;
+}
+
+.form-card-button.view-button-card {
+  background-color: #007bff; /* Blue for View */
+  color: white;
+  border: none;
+}
+
+.form-card-button.view-button-card:hover {
+  background-color: #0056b3;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .header-right {
+    margin-top: 15px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .dashboard-content {
+    padding: 20px;
+  }
+
+  .templates-grid,
+  .workspace-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 15px;
+  }
+
+  .template-card {
+    padding: 15px;
+  }
+
+  .workspace-controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .search-bar {
+    max-width: 100%;
+  }
+
+  .workspace-actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .create-form-button,
+  .view-toggle {
+    width: 100%;
+  }
+
+  .table-header,
+  .table-row {
+    grid-template-columns: 0.5fr 3fr 1.5fr 1.5fr 1.5fr 0.8fr; /* Still a bit narrow, consider stacking for smaller screens */
+    padding: 12px 15px;
+    font-size: 0.85em;
+  }
+
+  .checkbox-col input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .workspace-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 15px;
+  }
+
+  .form-card {
+    padding: 20px; /* Adjust card padding for smaller screens */
+  }
+
+  .form-card-name {
+    font-size: 1.25em; /* Adjust font size */
+  }
+
+  .form-card-button {
+    padding: 8px 12px; /* Adjust button padding */
+    font-size: 0.85em;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-header {
+    padding: 12px 15px;
+    font-size: 1.1em;
+  }
+
+  .logo-text {
+    font-size: 1.6em;
+  }
+
+  .header-right {
+    justify-content: center;
+  }
+
+  .view-plan-button,
+  .direct-logout-button {
+    padding: 8px 15px;
+    font-size: 0.8em;
+  }
+
+  .templates-grid {
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Even smaller cards */
+  }
+}

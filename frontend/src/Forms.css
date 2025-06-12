@@ -1,0 +1,461 @@
+/* src/Forms.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern, clean font */
+  background-color: #f0f2f5; /* Light grey background */
+  color: #333;
+}
+
+.form-builder-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: #f0f2f5;
+}
+
+/* Header Enhancements */
+.form-builder-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #2c3e50; /* Dark blue/grey */
+  color: white;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for depth */
+  z-index: 100; /* Ensure header is on top */
+}
+
+.header-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.form-builder-breadcrumb {
+  font-size: 0.85em;
+  color: #bbb;
+  margin-bottom: 3px;
+  letter-spacing: 0.5px;
+}
+
+.logo-text {
+  margin: 0;
+  font-size: 1.8em;
+  font-weight: 700; /* Bolder font weight */
+  color: #ffffff;
+}
+
+.header-nav {
+  display: flex;
+  gap: 25px; /* Increased spacing */
+}
+
+.header-nav a {
+  color: white;
+  text-decoration: none;
+  font-size: 1em;
+  padding: 5px 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.header-nav a:hover {
+  color: #a0d8ff; /* Lighter blue on hover */
+}
+
+.header-nav a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;
+  height: 2px;
+  background-color: #a0d8ff; /* Underline effect */
+  transition: width 0.3s ease;
+}
+
+.header-nav a:hover::after {
+  width: 100%;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* New: Preview Button */
+.preview-button {
+  background-color: #6c757d; /* Grey button for preview */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 0.95em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.preview-button:hover {
+  background-color: #5a6268;
+  transform: translateY(-1px);
+}
+
+
+.new-form-button {
+  background-color: #007bff; /* Primary blue */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-size: 0.95em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.new-form-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-1px);
+}
+
+.user-avatar-small {
+  width: 35px; /* Slightly larger avatar */
+  height: 35px;
+  border-radius: 50%;
+  border: 2px solid white;
+  object-fit: cover;
+}
+
+.code-icon {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #fff;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.code-icon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Main Content Area */
+.form-builder-content {
+  display: flex;
+  flex-grow: 1;
+  padding: 20px;
+  gap: 20px; /* Space between sidebar and editor */
+}
+
+/* Sidebar Enhancements */
+.question-types-sidebar {
+  flex: 0 0 250px; /* Fixed width */
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Stronger shadow */
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-tabs {
+  display: flex;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+}
+
+.tab-button {
+  flex: 1;
+  padding: 12px 0;
+  border: none;
+  background: none;
+  font-size: 1em;
+  font-weight: 600;
+  color: #777;
+  cursor: pointer;
+  border-bottom: 3px solid transparent; /* Underline effect */
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.tab-button.active {
+  color: #007bff;
+  border-bottom-color: #007bff;
+}
+
+.tab-button:hover:not(.active) {
+  color: #007bff;
+}
+
+.question-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1; /* Allows list to take available space */
+  overflow-y: auto; /* Scroll for long lists */
+}
+
+.question-list li {
+  display: flex;
+  align-items: center;
+  padding: 12px 10px;
+  margin-bottom: 8px;
+  background-color: #f9fbfd; /* Light background for list items */
+  border: 1px solid #e3e8ed; /* Subtle border */
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.95em;
+  color: #555;
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.question-list li:hover {
+  background-color: #eef5fc;
+  border-color: #cce0f5;
+  transform: translateX(3px); /* Slight slide effect */
+}
+
+.question-list li .icon {
+  margin-right: 12px;
+  font-size: 1.2em;
+  color: #007bff; /* Icon color */
+}
+
+/* Form Editor Area */
+.form-editor-area {
+  flex-grow: 1;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 25px;
+  min-height: 400px; /* Ensure a minimum height */
+  position: relative; /* For positioning the add question button */
+}
+
+.form-title-section {
+  margin-bottom: 25px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.form-title-input {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #333;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-title-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+}
+
+.empty-form-message {
+  text-align: center;
+  color: #777;
+  padding: 50px 20px;
+  font-size: 1.1em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+}
+
+.empty-form-message img {
+  max-width: 150px;
+  opacity: 0.7;
+}
+
+.question-block {
+  background-color: #fdfdff; /* Very light background for each question */
+  border: 1px solid #e9e9f2; /* Subtle border */
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.question-block:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.question-number {
+  font-size: 0.9em;
+  color: #888;
+  font-weight: 500;
+}
+
+.remove-question-button {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.remove-question-button:hover {
+  background-color: #fdd;
+  color: #d9534f;
+}
+
+.question-input {
+  width: calc(100% - 20px);
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1.1em;
+  color: #333;
+  margin-bottom: 15px;
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.question-input::placeholder {
+  color: #bbb;
+}
+
+.question-input:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+}
+
+.add-question-button {
+  background-color: #28a745; /* Green button */
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 8px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 30px;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.3); /* Green shadow */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  display: block; /* Ensures centering with transform */
+  width: fit-content; /* Only take width of content */
+  z-index: 50; /* Above question blocks */
+}
+
+.add-question-button:hover {
+  background-color: #218838;
+  transform: translateX(-50%) translateY(-3px); /* Lift on hover */
+  box-shadow: 0 6px 15px rgba(40, 167, 69, 0.4);
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .form-builder-header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 15px;
+  }
+
+  .header-nav {
+    margin-top: 15px;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .header-right {
+    margin-top: 15px;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* New: Form Preview Styles */
+.form-preview-container {
+  padding: 20px;
+  background-color: #fdfdff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.form-preview-container h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 1.8em;
+  font-weight: 700;
+}
+
+.preview-question {
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.preview-question h3 {
+  color: #333;
+  margin-top: 0;
+  margin-bottom: 15px;
+  font-size: 1.2em;
+}
+
+.preview-question input[type="text"],
+.preview-question textarea {
+  width: calc(100% - 20px);
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1em;
+  color: #555;
+  background-color: #f9f9f9;
+}
+
+.preview-question textarea {
+    resize: vertical;
+}
+
+.preview-options {
+  margin-top: 10px;
+}
+
+.preview-options label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 0.95em;
+  color: #444;
+}
+
+.preview-options input[type="radio"] {
+  margin-right: 8px;
+}
+
+/* Ensure image options grid for picture choice in preview also */
+.preview-options.image-options-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); /* Smaller cards for preview */
+  gap: 15px;
+  margin-top: 15px;
+}

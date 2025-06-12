@@ -1,0 +1,50 @@
+/* src/components/LongTextQuestion.css */
+
+.long-text-question-block {
+  /* Inherits general .question-block styles from FormBuilder.css */
+  border-left: 5px solid #ff7e5f; /* A distinct color for long text questions */
+}
+
+.long-text-question-block .question-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.long-text-question-block .question-number {
+  font-size: 0.9em;
+  color: #888;
+  font-weight: 500;
+}
+
+.long-text-question-block .remove-question-button {
+  background: none;
+  border: none;
+  color: #aaa;
+  font-size: 1.2em;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 50%;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.long-text-question-block .remove-question-button:hover {
+  background-color: #fdd;
+  color: #d9534f;
+}
+
+.long-text-area {
+  width: calc(100% - 20px);
+  padding: 12px;
+  margin-top: 15px;
+  border: 1px dashed #ccc; /* Dashed border for visual cue */
+  border-radius: 5px;
+  font-size: 1em;
+  resize: vertical; /* Allow vertical resizing */
+  min-height: 80px;
+  background-color: #fefefe;
+  color: #666;
+}
+
+/* Inherits .question-input, .question-footer, .required-label, .switch, .slider styles from FormBuilder.css */
