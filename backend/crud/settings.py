@@ -2,6 +2,7 @@
 from pathlib import Path
 import dj_database_url
 import os
+import dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -78,10 +79,17 @@ WSGI_APPLICATION = 'crud.wsgi.application'
   ###
 #}
 
+# DATABASES = {
+#     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+# }
+
 DATABASES = {
-    'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.config(
+        default=os.getenv('DATABASE_URL')
+    )
 }
-DATABASE_URL="postgresql://test_tdab_user:XuohOTAVfrHyvy4kVtdhH8m8NQtyd7z6@dpg-d15qch8dl3ps7382gutg-a.oregon-postgres.render.com/test_tdab"
+
+
 
 
 # Password validation
