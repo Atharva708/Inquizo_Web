@@ -1,11 +1,17 @@
 
+import os
 from pathlib import Path
 import dj_database_url
-import os
-import dotenv
+from datetime import timedelta
+
+# from dotenv import load_dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+#  # Load environment variables from .env file
+# BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# load_dotenv(os.path.join(BASE_DIR, '.env'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -82,10 +88,10 @@ WSGI_APPLICATION = 'crud.wsgi.application'
 # DATABASES = {
 #     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 # }
-
+DATABASE_URL="postgresql://test_tdab_user:XuohOTAVfrHyvy4kVtdhH8m8NQtyd7z6@dpg-d15qch8dl3ps7382gutg-a.oregon-postgres.render.com/test_tdab"
 DATABASES = {
     'default': dj_database_url.config(
-        default=os.getenv('DATABASE_URL')
+        default=DATABASE_URL
     )
 }
 
