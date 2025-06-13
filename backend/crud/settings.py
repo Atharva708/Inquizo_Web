@@ -79,7 +79,7 @@ WSGI_APPLICATION = 'crud.wsgi.application'
 #}
 
 DATABASES = {
-    'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    'default': dj_database_url.congfig(defualt=os.environ.get('DATABASE_URL'))
 }
 
 
