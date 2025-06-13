@@ -31,7 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'backend.api'
+    'api'
 ]
 
 MIDDLEWARE = [
@@ -81,6 +81,7 @@ WSGI_APPLICATION = 'crud.wsgi.application'
 DATABASES = {
     'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'))
 }
+DATABASE_URL="postgresql://test_tdab_user:XuohOTAVfrHyvy4kVtdhH8m8NQtyd7z6@dpg-d15qch8dl3ps7382gutg-a.oregon-postgres.render.com/test_tdab"
 
 
 # Password validation
