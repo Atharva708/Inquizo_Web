@@ -1,15 +1,16 @@
-from django.urls import path
-from .views import *
+# api/urls.py
+
+from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from .views import FormViewSet, QuestionViewSet, OptionViewSet, ResponseViewSet, AnswerViewSet
 
 router = DefaultRouter()
-router.register(r'projects', ProjectViewSet, basename='project')
+router.register('forms', FormViewSet)
+router.register('questions', QuestionViewSet)
+router.register('options', OptionViewSet)
+router.register('responses', ResponseViewSet)
+router.register('answers', AnswerViewSet)
 
-urlpatterns = router.urls
-
-
-
-
-#urlpatterns = [
-#    path('', home)
-#]
+urlpatterns = [
+    path('', include(router.urls)),  # Just '' if you're already using 'api/' in the root urls.py
+]

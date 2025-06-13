@@ -1,51 +1,23 @@
-from django.shortcuts import render
-from django.http import HttpResponse
-from rest_framework import viewsets, permissions
-from .models import *
-from rest_framework.response import Response
-from .serializers import *
+from rest_framework import viewsets
+from .models import Form, Question, Option, Response, Answer
+from .serializers import FormSerializer, QuestionSerializer, OptionSerializer, ResponseSerializer, AnswerSerializer
 
-# Create your views here.
+class FormViewSet(viewsets.ModelViewSet):
+    queryset = Form.objects.all()
+    serializer_class = FormSerializer
 
-def home(request):
-    return HttpResponse("Hello, world! This is the home page of the API.")
+class QuestionViewSet(viewsets.ModelViewSet):
+    queryset = Question.objects.all()
+    serializer_class = QuestionSerializer
 
-class ProjectViewSet(viewsets.ViewSet):
-    permission_classes = [permissions.IsAuthenticated]
-    queryset = Project.objects.all()
-    serializer_class = ProjectSerializer
+class OptionViewSet(viewsets.ModelViewSet):
+    queryset = Option.objects.all()
+    serializer_class = OptionSerializer
 
+class ResponseViewSet(viewsets.ModelViewSet):
+    queryset = Response.objects.all()
+    serializer_class = ResponseSerializer
 
-    def list(self, request):
-        queryset = self.queryset
-        serializer = self.serializer_class(queryset, many=True)
-        return Response(serializer.data)
-    
-    def retrieve(self, request, pk=None):
-        project = self.queryset.filter(pk=pk)
-        serializers = self.serializer_class(Project)
-        return Response(serializers.data)
-
-    def create(self, request):
-        serializers = self.serializer_class(data=request.data)
-        if serializers.is_valid():
-            serializers.save()
-            return Response(serializers.data)
-        else:
-            return Response(serializers.errors, status=400)
-        
-
-    def update(self, request, pk=None):
-        project = self.queryset.filter(pk=pk)
-        serializers = self.serializer_class(project, data=request.data)
-        if serializers.is_valid():
-            serializers.save()
-            return Response(serializers.data)
-        else:
-            return Response(serializers.errors, status=400)
-        
-
-    def destroy(self, request, pk=None):
-        project = self.queryset.filter(pk=pk)
-        project.delete()
-        return Response(status=204)
+class AnswerViewSet(viewsets.ModelViewSet):
+    queryset = Answer.objects.all()
+    serializer_class = AnswerSerializer
